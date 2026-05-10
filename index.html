@@ -13,7 +13,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -381,7 +381,7 @@
             font-size: .85rem;
             font-weight: 700;
             color: #444;
-            margin-bottom: 8px;
+            margin-bottom: 18px;
             display: flex;
             align-items: center;
             gap: 6px;
@@ -1441,6 +1441,81 @@
                 transform: scale(1.4)
             }
         }
+
+        /* Thêm vào phần <style> */
+        @keyframes hotPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 45, 85, .5), 0 4px 14px rgba(255, 45, 85, .3);
+                border-color: var(--primary);
+            }
+
+            50% {
+                box-shadow: 0 0 0 6px rgba(255, 45, 85, .0), 0 6px 22px rgba(255, 45, 85, .5);
+                border-color: #ff6b35;
+            }
+        }
+
+        @keyframes iconBounce {
+
+            0%,
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            25% {
+                transform: scale(1.3) rotate(-8deg);
+            }
+
+            75% {
+                transform: scale(1.3) rotate(8deg);
+            }
+        }
+
+        @keyframes badgeBlink {
+
+            0%,
+            100% {
+                opacity: 1;
+                background: linear-gradient(90deg, #ff2d55, #ff6b35);
+            }
+
+            50% {
+                opacity: .85;
+                background: linear-gradient(90deg, #ff6b35, #ff2d55);
+            }
+        }
+
+        .variant-btn.bestseller {
+            position: relative;
+            border: 2.5px solid var(--primary);
+            background: linear-gradient(135deg, #fff0f3, #fff5ee);
+            animation: hotPulse 1.6s ease-in-out infinite;
+            overflow: visible;
+        }
+
+        .bestseller-badge {
+            position: absolute;
+            top: -11px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #ff2d55, #ff6b35);
+            color: white;
+            font-size: .6rem;
+            font-weight: 900;
+            padding: 2px 10px;
+            border-radius: 10px;
+            white-space: nowrap;
+            letter-spacing: .4px;
+            animation: badgeBlink 1s ease-in-out infinite;
+        }
+
+        .bestseller-icon {
+            display: inline-block;
+            animation: iconBounce 1.2s ease-in-out infinite;
+            font-size: 1.1rem;
+        }
     </style>
 </head>
 
@@ -1448,7 +1523,7 @@
 
     <!-- TOP NAV -->
     <div class="topnav">
-        <div class="logo">🛒 TIPET SHOP 4.0 VN</div>
+        <div class="logo">🛒 TIPET SHOP HANTOX VN</div>
         <div class="search">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2.5">
                 <circle cx="11" cy="11" r="8" />
@@ -1471,12 +1546,12 @@
         <!-- GALLERY -->
         <div class="gallery">
             <div class="gallery-main" id="mainImgs">
-                <img src="./img/qt1.jpeg" class="active" alt="1">
-                <img src="./img/full.png" alt="2">
-                <img src="./img/bia 1.jpeg" alt="3">
-                <img src="./img/cd.jpeg" alt="4">
-                <img src="./img/hq1.jpeg" alt="5">
-                <img src="./img/hq2.jpeg" alt="6">
+                <img src="./img/qua tang.jpeg" class="active" alt="1">
+                <img src="./img/banner.jpeg" alt="2">
+                <img src="./img/thanh phan.jpeg" alt="3">
+                <img src="./img/hq2.jpeg" alt="4">
+                <img src="./img/before after 1.jpeg" alt="5">
+                <img src="./img/before after 2.jpeg" alt="6">
                 <img src="./img/hdsd.jpeg" alt="7">
                 <img src="./img/qt.jpeg" alt="8">
             </div>
@@ -1491,12 +1566,12 @@
                 <div class="scroll-dot"></div>
             </div>
             <div class="gallery-thumbs" id="thumbRow">
-                <img src="./img/qt1.jpeg" class="active" onclick="setImg(0)">
-                <img src="./img/full.png" onclick="setImg(1)">
-                <img src="./img/bia 1.jpeg" onclick="setImg(2)">
-                <img src="./img/cd.jpeg" onclick="setImg(3)">
-                <img src="./img/hq1.jpeg" onclick="setImg(4)">
-                <img src="./img/hq2.jpeg" onclick="setImg(5)">
+                <img src="./img/qua tang.jpeg" class="active" onclick="setImg(0)">
+                <img src="./img/banner.jpeg" onclick="setImg(1)">
+                <img src="./img/thanh phan.jpeg" onclick="setImg(2)">
+                <img src="./img/hq2.jpeg" onclick="setImg(3)">
+                <img src="./img/before after 1.jpeg" onclick="setImg(4)">
+                <img src="./img/before after 2.jpeg" onclick="setImg(5)">
                 <img src="./img/hdsd.jpeg" onclick="setImg(6)">
                 <img src="./img/qt.jpeg" onclick="setImg(7)">
             </div>
@@ -1528,7 +1603,7 @@
             </div>
 
             <div class="prod-price">
-                <span class="price-main" id="priceMain">199.000₫</span>
+                <span class="price-main" id="priceMain">169.000₫</span>
                 <span class="price-old" id="priceOld">349.000₫</span>
                 <span class="price-discount" id="priceDiscount">-43%</span>
             </div>
@@ -1561,18 +1636,25 @@
             </div>
             <div class="variant-section">
                 <div class="variant-label">⚖️ Phân loại: <span class="selected-variant" id="selectedVariantLabel">1 Lọ —
-                        199.000₫</span></div>
+                        169.000₫</span></div>
                 <div class="variant-options">
-                    <button class="variant-btn active" onclick="selectVariant(this,'1lo')">
-                        <span class="v-weight">1 Lọ</span><span class="v-price">199.000₫</span><span class="v-gift">🚚
+
+                    <button class="variant-btn " onclick="selectVariant(this,'1lo')">
+                        <span class="v-weight">1 Chai (Dùng thử)</span><span class="v-price">169.000₫</span><span
+                            class="v-gift">🚚
                             +20k phí ship</span>
                     </button>
-                    <button class="variant-btn" onclick="selectVariant(this,'2lo')">
-                        <span class="v-weight">2 Lọ</span><span class="v-price">369.000₫</span><span class="v-gift">🎁
-                            Tặng 1 chai sữa tắm 80k</span>
+                    <button class="variant-btn bestseller" onclick="selectVariant(this,'2lo')">
+                        <span class="bestseller-badge">🔥 BÁN CHẠY NHẤT</span>
+                        <span class="v-weight">
+                            <span class="bestseller-icon">🔥</span> 2 Chai + Quà Tặng
+                        </span>
+                        <span class="v-price">329.000₫</span>
+                        <span class="v-gift">🎁 Tặng 1 chai sữa tắm 80k</span>
                     </button>
                     <button class="variant-btn" onclick="selectVariant(this,'3lo')">
-                        <span class="v-weight">3 Lọ</span><span class="v-price">499.000₫</span><span class="v-gift">🎁
+                        <span class="v-weight">3 Chai (Siêu Tiết Kiệm)</span><span class="v-price">469.000₫</span><span
+                            class="v-gift">🎁
                             Tặng 2 chai sữa tắm 160k</span>
                     </button>
                 </div>
@@ -1583,16 +1665,17 @@
         <div class="section">
             <div class="section-title">THÔNG TIN SẢN PHẨM</div>
             <div class="desc-img-grid">
-
-                <img src="./img/qt2.jpeg" alt="SP 3"
-                    onerror="this.src='https://placehold.co/480x480/f0f4ff/5b6af5?text=🐾'">
                 <img src="./img/bia.jpeg" alt="SP 1"
                     onerror="this.src='https://placehold.co/480x480/f0fff4/00c853?text=🌿'" onclick="setImg(1)">
-                <img src="./img/2.gif" alt="SP 3"
+                <img src="./img/thanh phan.jpeg" alt="SP 3"
                     onerror="this.src='https://placehold.co/480x480/f0f4ff/5b6af5?text=🐾'">
-                <img src="./img/cd.jpeg" alt="SP 3"
+                <img src="./img/before after 1.jpeg" alt="SP 3"
                     onerror="this.src='https://placehold.co/480x480/f0f4ff/5b6af5?text=🐾'">
                 <img src="./img/1.gif" alt="SP 3"
+                    onerror="this.src='https://placehold.co/480x480/f0f4ff/5b6af5?text=🐾'">
+                <img src="./img/before after 2.jpeg" alt="SP 3"
+                    onerror="this.src='https://placehold.co/480x480/f0f4ff/5b6af5?text=🐾'">
+                <img src="./img/2.gif" alt="SP 3"
                     onerror="this.src='https://placehold.co/480x480/f0f4ff/5b6af5?text=🐾'">
                 <img src="./img/hq1.jpeg" alt="SP 4"
                     onerror="this.src='https://placehold.co/480x480/fff3e0/ff6d00?text=🐶'">
@@ -1873,16 +1956,23 @@
                 <label>⚖️ Phân loại: <span id="orderSelectedVariantLabel"
                         style="color:var(--primary);font-weight:800"></span></label>
                 <div class="variant-options" style="margin-top:8px">
+
                     <button class="variant-btn" id="ovBtn1lo" onclick="selectOrderVariant(this,'1lo')">
-                        <span class="v-weight">1 Lọ</span><span class="v-price">199.000₫</span><span class="v-gift">🚚
+                        <span class="v-weight">1 Chai (Dùng Thử)</span><span class="v-price">169.000₫</span><span
+                            class="v-gift">🚚
                             +20k ship</span>
                     </button>
-                    <button class="variant-btn" id="ovBtn2lo" onclick="selectOrderVariant(this,'2lo')">
-                        <span class="v-weight">2 Lọ</span><span class="v-price">369.000₫</span><span class="v-gift">🎁
-                            Tặng 1 chai sữa tắm 80k</span>
+                    <button class="variant-btn bestseller" id="ovBtn2lo" onclick="selectOrderVariant(this,'2lo')">
+                        <span class="bestseller-badge">🔥 BÁN CHẠY NHẤT</span>
+                        <span class="v-weight">
+                            <span class="bestseller-icon">🔥</span> 2 Chai + Quà Tặng
+                        </span>
+                        <span class="v-price">329.000₫</span>
+                        <span class="v-gift">🎁 Tặng 1 chai sữa tắm 80k</span>
                     </button>
                     <button class="variant-btn" id="ovBtn3lo" onclick="selectOrderVariant(this,'3lo')">
-                        <span class="v-weight">3 Lọ</span><span class="v-price">499.000₫</span><span class="v-gift">🎁
+                        <span class="v-weight">3 Chai (Siêu Tiết Kiệm)</span><span class="v-price">469.000₫</span><span
+                            class="v-gift">🎁
                             Tặng 2 chai sữa tắm 160k</span>
                     </button>
                 </div>
@@ -1948,9 +2038,9 @@
         let selectedVariantKey = '1lo';
 
         const VARIANTS = {
-            '1lo': { label: '1 Lọ', displayPrice: 199000, oldPrice: 349000, ship: 20000, cod: 40000, giftLabel: '' },
-            '2lo': { label: '2 Lọ', displayPrice: 369000, oldPrice: 698000, ship: 0, cod: 110000, giftLabel: '🎁 Tặng: 1 chai sữa tắm 80k' },
-            '3lo': { label: '3 Lọ', displayPrice: 499000, oldPrice: 1047000, ship: 0, cod: 150000, giftLabel: '🎁 Tặng: 2 chai sữa tắm 160k' },
+            '1lo': { label: '1 Lọ', displayPrice: 169000, oldPrice: 349000, ship: 20000, cod: 40000, giftLabel: '' },
+            '2lo': { label: '2 Lọ', displayPrice: 329000, oldPrice: 698000, ship: 0, cod: 110000, giftLabel: '🎁 Tặng: 1 chai sữa tắm 80k' },
+            '3lo': { label: '3 Lọ', displayPrice: 469000, oldPrice: 1047000, ship: 0, cod: 180000, giftLabel: '🎁 Tặng: 2 chai sữa tắm 160k' },
         };
 
         function getVariant(k) { return VARIANTS[k]; }
